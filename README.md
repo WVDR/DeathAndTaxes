@@ -43,7 +43,7 @@ Approach Taken:
 
 • SOLID principals
 
-•Resting framework is Nunit using the Core framework
+•Testing framework is Nunit using the Core framework
 
 • Razor frontend
 
