@@ -10,16 +10,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["DeathAndTaxes/DeathAndTaxes.csproj", "DeathAndTaxes/"]
-RUN dotnet restore "DeathAndTaxes/DeathAndTaxes.csproj"
+COPY ["DeathAndTaxes.App/DeathAndTaxes.App.csproj", "DeathAndTaxes.App/"]
+RUN dotnet restore "DeathAndTaxes.App/DeathAndTaxes.App.csproj"
 COPY . .
-WORKDIR "/src/DeathAndTaxes"
-RUN dotnet build "DeathAndTaxes.csproj" -c Release -o /app/build
+WORKDIR "/src/DeathAndTaxes.App"
+RUN dotnet build "DeathAndTaxes.App.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DeathAndTaxes.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "DeathAndTaxes.App.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "DeathAndTaxes.dll"]
+ENTRYPOINT ["dotnet", "DeathAndTaxes.App.dll"]

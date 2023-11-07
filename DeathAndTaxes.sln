@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.App", "DeathAndTaxes.App\DeathAndTaxes.App.csproj", "{F2BE3759-63EE-4763-ACC8-480194597DA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.API", "DeathAndTaxes.API\DeathAndTaxes.API.csproj", "{69B34646-A5C3-4725-AE6D-316DDC3D6200}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED85942C-53A4-42A6-9D59-3686195B737F}
+	EndGlobalSection
+EndGlobal
