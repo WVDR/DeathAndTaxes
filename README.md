@@ -7,7 +7,7 @@ Features:
 
 • Latest .NET Core version (.net 7)
 
-• demonstrates how progressive tax works
+• Demonstrates how progressive tax works
 
 o Adheres to the SOLID principals
 
@@ -25,6 +25,11 @@ The application will take annual income and postal code.
 
 ![image](https://github.com/WVDR/DeathAndTaxes/assets/10729245/e129434b-b57a-49d0-b98c-0137234bdfe6)
 
+https://www.youtube.com/watch?v=AhgR3X--bbY
+
+https://www.youtube.com/watch?v=kXCGbAv8YPw
+
+https://www.youtube.com/watch?v=7Qtr_vA3Prw
 
 The flat value:
 
