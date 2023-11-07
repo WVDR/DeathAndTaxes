@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.App", "DeathA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.API", "DeathAndTaxes.API\DeathAndTaxes.API.csproj", "{69B34646-A5C3-4725-AE6D-316DDC3D6200}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.API.Test", "DeathAndTaxes.API.Test\DeathAndTaxes.API.Test.csproj", "{ED060B67-6080-4189-90A2-5C70B8CF9E24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.App.Test", "DeathAndTaxes.App.Test\DeathAndTaxes.App.Test.csproj", "{96353DC4-88E1-485F-AF9A-6FEF24964DF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
