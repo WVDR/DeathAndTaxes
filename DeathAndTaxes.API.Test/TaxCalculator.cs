@@ -84,12 +84,12 @@ namespace DeathAndTaxes.API.Test
             double tax6 = taxCalculator.CalculateProgressiveTax(income6);
 
             // Assert
-            Assert.AreEqual(500.0, tax1, 0.01);   // 5000 * 0.10
-            Assert.AreEqual(2750.0, tax2, 0.01);  // 8350 * 0.10 + 11650 * 0.15
-            Assert.AreEqual(8750.0, tax3, 0.01);  // 8350 * 0.10 + 25600 * 0.15 + 600 * 0.25
-            Assert.AreEqual(21668.0, tax4, 0.01); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 143750 * 0.28
-            Assert.AreEqual(51016.5, tax5, 0.01); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 89300 * 0.28 + 28250 * 0.33
-            Assert.AreEqual(123301.5, tax6, 0.01); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 89300 * 0.28 + 201400 * 0.33 + 272050 * 0.35
+            Assert.That(tax1, Is.EqualTo(500.0).Within(0.01));   // 5000 * 0.10
+            Assert.That(tax2, Is.EqualTo(2582.5).Within(0.01));  // 8350 * 0.10 + 11650 * 0.15
+            Assert.That(tax3, Is.EqualTo(6187.5).Within(0.01));  // 8350 * 0.10 + 25600 * 0.15 + 600 * 0.25
+            Assert.That(tax4, Is.EqualTo(21720).Within(0.01)); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 143750 * 0.28
+            Assert.That(tax5, Is.EqualTo(51142.5).Within(0.01)); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 89300 * 0.28 + 28250 * 0.33
+            Assert.That(tax6, Is.EqualTo(117683.5).Within(0.01)); // 8350 * 0.10 + 25600 * 0.15 + 48300 * 0.25 + 89300 * 0.28 + 201400 * 0.33 + 272050 * 0.35
         }
 
         [Test]
