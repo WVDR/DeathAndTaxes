@@ -80,11 +80,14 @@ namespace DeathAndTaxes.API.Test
             var orderedKeys = taxBracketsAndPercentance.Keys.OrderBy(key => key).ToArray();
 
             double progressiveTax = 0;
-            for (int i = 0; i < orderedKeys.Count(); i++)
+            var maxbracket = orderedKeys.Count() - 1;
+            //all tax brackets is i
+            for (int i = 0; i <= maxbracket; i++)
             {
                 var taxbracketKey = orderedKeys[i];
                 var percentageValue = taxBracketsAndPercentance[taxbracketKey];
 
+                //Falls within tax bracket
                 if (income <= taxbracketKey)
                 {
                     //first level no need to process anything else
@@ -92,28 +95,70 @@ namespace DeathAndTaxes.API.Test
                     {
                         return income * percentageValue;
                     }
+                    //Take the base level tax and calculate up
+                    else
+                    {
+                        progressiveTax += orderedKeys[0] * taxBracketsAndPercentance[orderedKeys[0]];
+                    }
 
-
+                    //Tax brackets prior and upto the current one, but NOT 1st base one being 0.
                     for (int j = 1; j <= i; j++)
                     {
                         var pastTaxbracketKey = orderedKeys[j];
                         var pastPercentageValue = taxBracketsAndPercentance[pastTaxbracketKey];
                         var pastPreviouseTaxbracketKey = orderedKeys[j-1];                       
 
+                        //All prior brackets(besides base or 0), use the tax caluclation for that bracket only with its rate.
                         if(j < i)
                         {
                             progressiveTax += (pastTaxbracketKey - pastPreviouseTaxbracketKey) * pastPercentageValue;
                         }
-                        else if (j >= i)
+                        //current brackets, use the tax caluclation with the current income and that bracket rate.
+                        else if (j == i)
                         {
                             progressiveTax += (income - pastPreviouseTaxbracketKey) * pastPercentageValue;
                         }
+                        //You either fall outside min, max range and there is something wrong.
                         else
                         {
-                            throw new Exception(string.Format($"taxbracket could not be processed: '{taxbracketKey}'"));
+                            throw new IndexOutOfRangeException(string.Format($"income: '{income}' does not match taxbracket could not be processed: '{taxbracketKey}'"));
                         }
                     }
                     return progressiveTax;
+                }
+                //this is above what we predicted so just process all brackets
+                else if(income > orderedKeys[maxbracket])
+                {
+                    progressiveTax += orderedKeys[0] * taxBracketsAndPercentance[orderedKeys[0]];                    
+
+                    //process all brackets besides base
+                    for (int j = 1; j <= maxbracket; j++)
+                    {
+                        var pastTaxbracketKey = orderedKeys[j];
+                        var pastPercentageValue = taxBracketsAndPercentance[pastTaxbracketKey];
+                        var pastPreviouseTaxbracketKey = orderedKeys[j - 1];
+
+                        //All prior brackets(besides base or 0), use the tax caluclation for that bracket only with its rate.
+                        if (j < maxbracket)
+                        {
+                            progressiveTax += (pastTaxbracketKey - pastPreviouseTaxbracketKey) * pastPercentageValue;
+                        }
+                        //current brackets, use the tax caluclation with the current income and that bracket rate.
+                        else if (j == maxbracket)
+                        {
+                            progressiveTax += (income - pastPreviouseTaxbracketKey) * pastPercentageValue;
+                        }
+                        //You either fall outside min, max range and there is something wrong.
+                        else
+                        {
+                            throw new ArgumentOutOfRangeException(string.Format($"income: '{income}' is outside of max taxbracket: '{orderedKeys[maxbracket]}'"));
+                        }
+                    }
+                    return progressiveTax;
+                }
+                else if (i == maxbracket)
+                {
+                    throw new ArgumentException(string.Format($"income: '{income}' could not be process for taxbrackets: '{orderedKeys[0]}' - '{orderedKeys[maxbracket]}'"));
                 }
             }
             return progressiveTax;
