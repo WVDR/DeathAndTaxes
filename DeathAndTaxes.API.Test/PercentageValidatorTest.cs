@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.API.Test
 {
-    public class PercentageValidator
+    public class PercentageValidatorTest
     {
         public bool IsPercentage(double value)
         {
@@ -21,7 +21,7 @@ namespace DeathAndTaxes.API.Test
         public void IsPercentage_ShouldReturnTrueForValidPercentage()
         {
             // Arrange
-            var validator = new PercentageValidator();
+            var validator = new PercentageValidatorTest();
 
             // Test valid percentage values
             double validPercentage1 = 0.0;
@@ -38,7 +38,7 @@ namespace DeathAndTaxes.API.Test
         public void IsPercentage_ShouldReturnFalseForInvalidPercentage()
         {
             // Arrange
-            var validator = new PercentageValidator();
+            var validator = new PercentageValidatorTest();
 
             // Test invalid percentage values
             double invalidPercentage1 = -10.0;

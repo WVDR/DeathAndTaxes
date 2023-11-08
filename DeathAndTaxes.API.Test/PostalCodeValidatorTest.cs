@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.API.Test
 {
-    public class PostalCodeValidator
+    public class PostalCodeValidatorTest
     {
         public bool IsValidPostalCode(string postalCode)
         {
@@ -22,7 +22,7 @@ namespace DeathAndTaxes.API.Test
         public void IsValidPostalCode_ValidCode_ReturnsTrue()
         {
             // Arrange
-            var validator = new PostalCodeValidator();
+            var validator = new PostalCodeValidatorTest();
 
             // Act
             bool result = validator.IsValidPostalCode("1234");
@@ -35,7 +35,7 @@ namespace DeathAndTaxes.API.Test
         public void IsValidPostalCode_InvalidCode_ReturnsFalse()
         {
             // Arrange
-            var validator = new PostalCodeValidator();
+            var validator = new PostalCodeValidatorTest();
 
             // Act
             bool result = validator.IsValidPostalCode("ABCD");
@@ -48,7 +48,7 @@ namespace DeathAndTaxes.API.Test
         public void IsValidPostalCode_NullCode_ReturnsFalse()
         {
             // Arrange
-            var validator = new PostalCodeValidator();
+            var validator = new PostalCodeValidatorTest();
 
             // Act
             bool result = validator.IsValidPostalCode(null);
