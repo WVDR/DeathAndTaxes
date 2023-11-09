@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.Core.Models
 {
-    internal class TaxIncome
+    public class TaxIncomeBracket
     {
+        public int TaxIncomeBracketId { get; set; }
+        public string IncomeBracket { get; set; }
+
+        // Navigation properties
+        public List<ProgressiveTax> ProgressiveTaxes { get; set; }
+        public List<FlatValueTax> FlatValueTaxes { get; set; }
     }
 }

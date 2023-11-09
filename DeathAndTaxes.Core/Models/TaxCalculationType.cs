@@ -11,7 +11,7 @@ namespace DeathAndTaxes.Core.Models
         public int TaxCalculationTypeId { get; set; }
         public string Name { get; set; }
 
-        // Navigation property for relating to PostalCode
+        // Navigation properties
         public List<PostalCode> PostalCodes { get; set; }
     }
 

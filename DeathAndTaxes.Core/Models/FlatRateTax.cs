@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.Core.Models
 {
-    internal class FlatRateTax
+    public class FlatRateTax
     {
+        public int FlatRateTaxId { get; set; }
+        public string Description { get; set; }
+        // Navigation properties
+        public int TaxPercentageRateId { get; set; }
+        public TaxPercentageRate TaxPercentageRate { get; set; }
     }
 }

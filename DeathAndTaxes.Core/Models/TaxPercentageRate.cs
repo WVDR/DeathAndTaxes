@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.Core.Models
 {
-    internal class TaxPercentageRate
+    public class TaxPercentageRate
     {
-        public int TaxPercentageId { get; set; }
-        public string Percentage { get; set; }
+        public int TaxPercentageRateId { get; set; }
+        public string PercentageRate { get; set; }
 
-        //// Navigation property for relating to TaxCalculationType
-        //public int TaxCalculationTypeId { get; set; }
-        //public TaxCalculationType TaxCalculationType { get; set; }
+        // Navigation properties
+        public List<ProgressiveTax> ProgressiveTaxes { get; set; }
+        public List<FlatValueTax> FlatValueTaxes { get; set; }
+        public List<FlatRateTax> FlatRateTaxes { get; set; }
+        
     }
 }

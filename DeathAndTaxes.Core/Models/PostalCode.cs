@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace DeathAndTaxes.Core.Models
 {
     public class PostalCode
-{
-    public int PostalCodeId { get; set; }
-    public string Code { get; set; }
+    {
+        public int PostalCodeId { get; set; }
+        public string Code { get; set; }
 
-    // Navigation property for relating to TaxCalculationType
-    public int TaxCalculationTypeId { get; set; }
-    public TaxCalculationType TaxCalculationType { get; set; }
-}
+        // Navigation properties
+        public int TaxCalculationTypeId { get; set; }
+        public TaxCalculationType TaxCalculationType { get; set; }
+    }
 
 }
