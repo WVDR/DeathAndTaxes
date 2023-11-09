@@ -9,7 +9,8 @@ namespace DeathAndTaxes.Core.Models
     public class TaxIncomeBracket
     {
         public int TaxIncomeBracketId { get; set; }
-        public string IncomeBracket { get; set; }
+        public double FromIncomeBracket { get; set; }
+        public double ToIncomeBracket { get; set; }
 
         // Navigation properties
         public List<ProgressiveTax> ProgressiveTaxes { get; set; }

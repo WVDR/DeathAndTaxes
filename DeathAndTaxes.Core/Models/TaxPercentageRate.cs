@@ -9,7 +9,7 @@ namespace DeathAndTaxes.Core.Models
     public class TaxPercentageRate
     {
         public int TaxPercentageRateId { get; set; }
-        public string PercentageRate { get; set; }
+        public double PercentageRate { get; set; }
 
         // Navigation properties
         public List<ProgressiveTax> ProgressiveTaxes { get; set; }

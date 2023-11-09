@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeathAndTaxes.Data.Migrations
 {
     [DbContext(typeof(DeathAndTaxesDbContext))]
-    [Migration("20231109144528_initial")]
+    [Migration("20231109204156_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -153,9 +153,11 @@ namespace DeathAndTaxes.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaxIncomeBracketId"));
 
-                    b.Property<string>("IncomeBracket")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("FromIncomeBracket")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ToIncomeBracket")
+                        .HasColumnType("float");
 
                     b.HasKey("TaxIncomeBracketId");
 
@@ -170,9 +172,8 @@ namespace DeathAndTaxes.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaxPercentageRateId"));
 
-                    b.Property<string>("PercentageRate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("PercentageRate")
+                        .HasColumnType("float");
 
                     b.HasKey("TaxPercentageRateId");
 

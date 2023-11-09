@@ -150,9 +150,11 @@ namespace DeathAndTaxes.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaxIncomeBracketId"));
 
-                    b.Property<string>("IncomeBracket")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("FromIncomeBracket")
+                        .HasColumnType("float");
+
+                    b.Property<double>("ToIncomeBracket")
+                        .HasColumnType("float");
 
                     b.HasKey("TaxIncomeBracketId");
 
@@ -167,9 +169,8 @@ namespace DeathAndTaxes.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TaxPercentageRateId"));
 
-                    b.Property<string>("PercentageRate")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<double>("PercentageRate")
+                        .HasColumnType("float");
 
                     b.HasKey("TaxPercentageRateId");
 

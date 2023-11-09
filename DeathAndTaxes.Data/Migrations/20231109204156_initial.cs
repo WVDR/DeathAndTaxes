@@ -29,7 +29,8 @@ namespace DeathAndTaxes.Data.Migrations
                 {
                     TaxIncomeBracketId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IncomeBracket = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    FromIncomeBracket = table.Column<double>(type: "float", nullable: false),
+                    ToIncomeBracket = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +43,7 @@ namespace DeathAndTaxes.Data.Migrations
                 {
                     TaxPercentageRateId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    PercentageRate = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    PercentageRate = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
