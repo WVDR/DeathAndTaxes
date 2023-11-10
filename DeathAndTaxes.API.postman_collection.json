@@ -1,0 +1,388 @@
+{
+	"info": {
+		"_postman_id": "fa792925-cbbc-40a0-95ec-4ee65908742d",
+		"name": "DeathAndTaxes.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30957418"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "PostalCode",
+					"item": [
+						{
+							"name": "{postalcode}",
+							"item": [
+								{
+									"name": "/api/PostalCode/:postalcode",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/PostalCode/:postalcode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"PostalCode",
+												":postalcode"
+											],
+											"variable": [
+												{
+													"key": "postalcode",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/PostalCode/:postalcode",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"PostalCode",
+														":postalcode"
+													],
+													"variable": [
+														{
+															"key": "postalcode"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/PostalCode",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/PostalCode",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"PostalCode"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/PostalCode",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"PostalCode"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "TaxCalculator",
+					"item": [
+						{
+							"name": "ProgressiveTax",
+							"item": [
+								{
+									"name": "/api/TaxCalculator/ProgressiveTax",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/TaxCalculator/ProgressiveTax?income=<double>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TaxCalculator",
+												"ProgressiveTax"
+											],
+											"query": [
+												{
+													"key": "income",
+													"value": "<double>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TaxCalculator/ProgressiveTax?income=<double>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TaxCalculator",
+														"ProgressiveTax"
+													],
+													"query": [
+														{
+															"key": "income",
+															"value": "<double>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "<double>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "CalculateAndStoreTax",
+							"item": [
+								{
+									"name": "/api/TaxCalculator/CalculateAndStoreTax",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/TaxCalculator/CalculateAndStoreTax?postcode=<string>&income=<double>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TaxCalculator",
+												"CalculateAndStoreTax"
+											],
+											"query": [
+												{
+													"key": "postcode",
+													"value": "<string>"
+												},
+												{
+													"key": "income",
+													"value": "<double>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TaxCalculator/CalculateAndStoreTax?postcode=<string>&income=<double>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TaxCalculator",
+														"CalculateAndStoreTax"
+													],
+													"query": [
+														{
+															"key": "postcode",
+															"value": "<string>"
+														},
+														{
+															"key": "income",
+															"value": "<double>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "<double>"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "TaxScores",
+							"item": [
+								{
+									"name": "/api/TaxCalculator/TaxScores",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/TaxCalculator/TaxScores",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"TaxCalculator",
+												"TaxScores"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/TaxCalculator/TaxScores",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"TaxCalculator",
+														"TaxScores"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

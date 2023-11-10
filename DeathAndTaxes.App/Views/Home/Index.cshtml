@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";    
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<link rel="stylesheet" type="text/css" href="" />
+<body>    
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+        <table>
+            <tr>
+                <td>Postcode: </td>
+                <td><input type="text" id="txtPostcode" name="Postcode" /></td>
+            </tr>
+            <tr>
+                <td>Income: </td>
+                <td><input type="text" id="txtIncome" name="Income" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @ViewBag.Tax
+    </form>    
+</body>
+</html>
