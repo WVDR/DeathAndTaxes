@@ -1,8 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+        <table>
+            <tr>
+                <td>Postcode: </td>
+                <td><input type="text" id="txtPostcode" name="Postcode" /></td>
+            </tr>
+            <tr>
+                <td>Income: </td>
+                <td><input type="text" id="txtIncome" name="Income" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        <hr />
+        @ViewBag.Tax
+    </form>
+</body>
+</html>
