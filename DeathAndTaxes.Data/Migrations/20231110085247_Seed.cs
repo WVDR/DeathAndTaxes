@@ -10,7 +10,8 @@ namespace DeathAndTaxes.Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-
+            var sqlFile = Path.Combine(AppContext.BaseDirectory,"Scripts/Seed.sql");
+            migrationBuilder.Sql(File.ReadAllText(sqlFile));
         }
 
         /// <inheritdoc />
