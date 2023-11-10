@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.App", "DeathAndTaxes.App\DeathAndTaxes.App.csproj", "{F2BE3759-63EE-4763-ACC8-480194597DA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.API", "DeathAndTaxes.API\DeathAndTaxes.API.csproj", "{69B34646-A5C3-4725-AE6D-316DDC3D6200}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.API.Test", "DeathAndTaxes.API.Test\DeathAndTaxes.API.Test.csproj", "{ED060B67-6080-4189-90A2-5C70B8CF9E24}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.App.Test", "DeathAndTaxes.App.Test\DeathAndTaxes.App.Test.csproj", "{96353DC4-88E1-485F-AF9A-6FEF24964DF4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.Core", "DeathAndTaxes.Core\DeathAndTaxes.Core.csproj", "{CC48682D-C186-41C3-A42E-7684B7E60659}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.Data", "DeathAndTaxes.Data\DeathAndTaxes.Data.csproj", "{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2BE3759-63EE-4763-ACC8-480194597DA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69B34646-A5C3-4725-AE6D-316DDC3D6200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED060B67-6080-4189-90A2-5C70B8CF9E24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96353DC4-88E1-485F-AF9A-6FEF24964DF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC48682D-C186-41C3-A42E-7684B7E60659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC48682D-C186-41C3-A42E-7684B7E60659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC48682D-C186-41C3-A42E-7684B7E60659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC48682D-C186-41C3-A42E-7684B7E60659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED85942C-53A4-42A6-9D59-3686195B737F}
+	EndGlobalSection
+EndGlobal
