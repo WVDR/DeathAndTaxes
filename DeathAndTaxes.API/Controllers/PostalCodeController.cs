@@ -18,7 +18,7 @@ namespace DeathAndTaxes.API.Controllers
 
         // GET: api/<PostalCodeController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public string Get()
         {
             var result = _postalCodeRepositry.GetPostalCodes();
             return result;
@@ -28,7 +28,7 @@ namespace DeathAndTaxes.API.Controllers
         [HttpGet("{postalcode}")]
         public string Get(string postalcode)
         {
-            var result = _postalCodeRepositry.GetTaxCalculationType(postalcode);
+            var result = _postalCodeRepositry.GetPostalCode(postalcode);
             return result;
         }      
     }

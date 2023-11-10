@@ -14,6 +14,7 @@ namespace DeathAndTaxes.Core.Models
         // Navigation properties
         public int TaxCalculationTypeId { get; set; }
         public TaxCalculationType TaxCalculationType { get; set; }
+        public List<TaxScore> TaxScores { get; set; }
     }
 
 }

@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<DeathAndTaxesDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("DeathAndTaxes.API")));
 builder.Services.AddScoped<IPostalCodeRepositry, PostalCodeRepositry>();
+builder.Services.AddScoped<ITaxCalculatorRepositry, TaxCalculatorRepositry>();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

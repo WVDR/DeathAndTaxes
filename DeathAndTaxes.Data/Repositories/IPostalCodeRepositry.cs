@@ -8,7 +8,7 @@ namespace DeathAndTaxes.Data.Repositories
 {
     public interface IPostalCodeRepositry
     {
-        public string GetTaxCalculationType(string postalcode);
-        public List<string> GetPostalCodes();
+        public string GetPostalCode(string postalcode);
+        public string GetPostalCodes();
     }
 }

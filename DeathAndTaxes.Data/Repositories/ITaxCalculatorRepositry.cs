@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace DeathAndTaxes.Data.Repositories
 {
-    internal interface ITaxCalculatorRepositry
+    public interface ITaxCalculatorRepositry
     {
+        public double calculateProgressive(double income);
+        public double calculateFlatValue(double income);
+        public double calculateFlatRate(double income);
+
+        public double CalculateAndStoreTax(string postcode,double income);
     }
 }
+

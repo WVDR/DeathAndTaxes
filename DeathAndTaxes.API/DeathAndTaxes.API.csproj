@@ -23,4 +23,8 @@
     <ProjectReference Include="..\DeathAndTaxes.Data\DeathAndTaxes.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DataTransferObjects\" />
+  </ItemGroup>
+
 </Project>

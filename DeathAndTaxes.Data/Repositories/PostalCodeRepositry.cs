@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Text.Json;
+using System.Xml;
+using Microsoft.Extensions.Options;
 
 namespace DeathAndTaxes.Data.Repositories
 {
@@ -12,39 +16,40 @@ namespace DeathAndTaxes.Data.Repositories
     {
         private readonly DeathAndTaxesDbContext _dbcontext;
 
+        private JsonSerializerOptions _jsonSerializerOptions = new()
+        {
+            WriteIndented = true
+        };
         public PostalCodeRepositry(DeathAndTaxesDbContext dbcontext)
         {
             _dbcontext = dbcontext;
         }
 
-        public List<string> GetPostalCodes()
+        public string GetPostalCodes()
         {
             var query = _dbcontext.PostalCodes
                 .Join(
                     _dbcontext.TaxCalculationTypes,
                     PostalCodes => PostalCodes.TaxCalculationTypeId,
                     TaxCalculationTypes => TaxCalculationTypes.TaxCalculationTypeId,
-                    (PostalCodes, TaxCalculationTypes) =>  PostalCodes.Code+ ','+ TaxCalculationTypes.Name
-                    
+                    (PostalCodes, TaxCalculationTypes) => new { PostalCodes.PostalCodeId, PostalCodes.Code, TaxCalculationTypes.Name }
+
                 ).ToList();
-            return query;
+            
+            return JsonSerializer.Serialize(query, _jsonSerializerOptions);
         }
 
-        public string GetTaxCalculationType(string postalcode)
+        public string GetPostalCode(string postalcode)
         {
             var query = _dbcontext.PostalCodes.Where(pc => pc.Code == postalcode)
                 .Join(
                     _dbcontext.TaxCalculationTypes,
                     PostalCodes => PostalCodes.TaxCalculationTypeId,
                     TaxCalculationTypes => TaxCalculationTypes.TaxCalculationTypeId,
-                    (PostalCodes, TaxCalculationTypes) => new
-                    {
-                        code = PostalCodes.Code,
-                        name = TaxCalculationTypes.Name
-                    }
+                    (PostalCodes, TaxCalculationTypes) => new { PostalCodes.PostalCodeId, PostalCodes.Code, TaxCalculationTypes.Name }
                 ).SingleOrDefault();
-            return query.name;
-            
+            return JsonSerializer.Serialize(query, _jsonSerializerOptions);
+
         }
     }
 }

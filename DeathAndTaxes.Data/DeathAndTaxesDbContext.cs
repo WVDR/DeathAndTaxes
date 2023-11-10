@@ -30,7 +30,8 @@ namespace DeathAndTaxes.Data
         public DbSet<FlatValueTax> FlatValueTaxes { get; set; }
         public DbSet<FlatRateTax> FlatRateTaxes { get; set; }
         public DbSet<TaxPercentageRate> TaxPercentageRates { get; set; }
-        public DbSet<TaxIncomeBracket> TaxIncomeBrackets { get; set; }
+        public DbSet<TaxIncomeBracket> TaxIncomeBrackets { get; set; }        
+        public DbSet<TaxScore> TaxScores { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -56,6 +57,9 @@ namespace DeathAndTaxes.Data
 
             modelBuilder.Entity<TaxIncomeBracket>()
                 .HasKey(tib => tib.TaxIncomeBracketId);
+
+            modelBuilder.Entity<TaxScore>()
+                .HasKey(ts => ts.TaxScoreId);
 
             //FK
 
@@ -122,6 +126,17 @@ namespace DeathAndTaxes.Data
                 .HasMany(tpr => tpr.FlatRateTaxes)
                 .WithOne(frt => frt.TaxPercentageRate)
                 .HasForeignKey(frt => frt.TaxPercentageRateId);
+
+            //TaxScore
+            modelBuilder.Entity<TaxScore>()
+                .HasOne(ts => ts.PostalCode)
+                .WithMany()
+                .HasForeignKey(ts => ts.PostalCodeId);
+
+            modelBuilder.Entity<PostalCode>()
+                .HasMany(pc => pc.TaxScores)
+                .WithOne(ts => ts.PostalCode)
+                .HasForeignKey(ts => ts.PostalCodeId);
         }
     }
 

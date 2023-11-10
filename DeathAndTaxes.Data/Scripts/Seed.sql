@@ -201,8 +201,8 @@ INSERT INTO [dbo].[FlatValueTaxes]
            ('10000 per year, else if the individual earns less than 200000 per year the tax will be at 5%'
            ,10000
            ,12
-           ,4
-           ,1)
+           ,1
+           ,7)
 GO
 
 INSERT INTO [dbo].[FlatRateTaxes]
