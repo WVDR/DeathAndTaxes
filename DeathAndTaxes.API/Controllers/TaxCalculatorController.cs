@@ -30,6 +30,13 @@ namespace DeathAndTaxes.API.Controllers
             var result = _taxCalculatorRepositry.CalculateAndStoreTax(postcode,income);
             return result;
 
-        }        
+        }
+
+        [HttpGet("TaxScores")]
+        public string TaxScores()
+        {
+            var result = _taxCalculatorRepositry.TaxScores();
+            return result;
+        }
     }
 }

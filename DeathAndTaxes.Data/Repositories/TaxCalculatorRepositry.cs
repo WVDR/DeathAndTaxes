@@ -15,6 +15,10 @@ namespace DeathAndTaxes.Data.Repositories
     {
         private readonly DeathAndTaxesDbContext _dbcontext;
         private readonly IPostalCodeRepositry _postalCodeRepositry;
+        private JsonSerializerOptions _jsonSerializerOptions = new()
+        {
+            WriteIndented = true
+        };
 
         public TaxCalculatorRepositry(DeathAndTaxesDbContext dbcontext, IPostalCodeRepositry postalCodeRepositry)
         {
@@ -216,7 +220,7 @@ namespace DeathAndTaxes.Data.Repositories
                 User = WindowsIdentity.GetCurrent().Name, //TODO will only work in debug, change for production.
                 Income = income,
                 Tax = tax,
-                DateCapotured = DateTime.UtcNow,//UTC for international cases.
+                DateCaptured = DateTime.UtcNow,//UTC for international cases.
                 PostalCodeId = PostCodeCalculationType.PostalCodeId
 
             };
@@ -292,7 +296,7 @@ namespace DeathAndTaxes.Data.Repositories
                 _dbcontext.TaxPercentageRates,
                 FlatRateTaxes => FlatRateTaxes.TaxPercentageRateId,
                 TaxPercentageRates => TaxPercentageRates.TaxPercentageRateId,
-                (FlatValueTaxes, TaxPercentageRates) => new
+                (FlatRateTaxes, TaxPercentageRates) => new
                 {                    
                     TaxPercentageRates.PercentageRate
                 }
@@ -300,6 +304,30 @@ namespace DeathAndTaxes.Data.Repositories
 
             // Calculate tax at a flat rate of 17.5% of the income.
             return income * query.PercentageRate / 100;
+        }
+
+
+        public string TaxScores()
+        {
+            var query = _dbcontext.TaxScores
+            .Join(
+                _dbcontext.PostalCodes,
+                PostalCodes => PostalCodes.PostalCodeId,
+                TaxScores => TaxScores.PostalCodeId,
+                (TaxScores, PostalCodes) => new
+                {
+                    TaxScores.TaxScoreId,
+                    TaxScores.User,
+                    TaxScores.Income,
+                    TaxScores.Tax,
+                    TaxScores.DateCaptured,
+                    PostalCode = PostalCodes.Code
+
+
+                }
+            ).OrderByDescending(result => result.DateCaptured).ThenByDescending(result => result.Tax).Take(10).ToList();
+
+            return JsonSerializer.Serialize(query, _jsonSerializerOptions);
         }
     }
 

@@ -12,7 +12,7 @@ namespace DeathAndTaxes.Core.Models
         public string User { get; set; }// TODO: when we have authentication, allow the user id to be linked here        
         public double Income { get; set; }
         public double Tax { get; set; }
-        public DateTime DateCapotured { get; set; }
+        public DateTime DateCaptured { get; set; }
         // Navigation properties        
         public int PostalCodeId { get; set; }
         public PostalCode PostalCode { get; set; }

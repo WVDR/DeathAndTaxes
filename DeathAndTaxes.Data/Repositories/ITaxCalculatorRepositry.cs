@@ -11,8 +11,8 @@ namespace DeathAndTaxes.Data.Repositories
         public double calculateProgressive(double income);
         public double calculateFlatValue(double income);
         public double calculateFlatRate(double income);
-
         public double CalculateAndStoreTax(string postcode,double income);
+        public string TaxScores();
     }
 }
 

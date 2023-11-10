@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.API.Test", "D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.App.Test", "DeathAndTaxes.App.Test\DeathAndTaxes.App.Test.csproj", "{96353DC4-88E1-485F-AF9A-6FEF24964DF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.Core", "DeathAndTaxes.Core\DeathAndTaxes.Core.csproj", "{CC48682D-C186-41C3-A42E-7684B7E60659}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.Core", "DeathAndTaxes.Core\DeathAndTaxes.Core.csproj", "{CC48682D-C186-41C3-A42E-7684B7E60659}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeathAndTaxes.Data", "DeathAndTaxes.Data\DeathAndTaxes.Data.csproj", "{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DeathAndTaxes.Data", "DeathAndTaxes.Data\DeathAndTaxes.Data.csproj", "{7C329F2B-127A-4D86-BFA2-CE71B8A5145A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

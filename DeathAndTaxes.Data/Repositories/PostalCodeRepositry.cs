@@ -15,7 +15,6 @@ namespace DeathAndTaxes.Data.Repositories
     public class PostalCodeRepositry : IPostalCodeRepositry
     {
         private readonly DeathAndTaxesDbContext _dbcontext;
-
         private JsonSerializerOptions _jsonSerializerOptions = new()
         {
             WriteIndented = true
